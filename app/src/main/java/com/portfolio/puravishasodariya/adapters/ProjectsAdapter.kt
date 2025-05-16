@@ -19,7 +19,7 @@ class ProjectsAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProjectViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_project, parent, false)
+            .inflate(R.layout.project_item_layout, parent, false)
         return ProjectViewHolder(view)
     }
 

@@ -51,18 +51,18 @@ class ExperienceFragment : Fragment() {
                 R.drawable.company_logo_placeholder,
                 listOf("Flutter", "Dart", "Firebase", "BLoC")
             ),
-            Experience(
-                "Android Developer",
-                "AppTech Solutions",
-                "Jun 2017 - Feb 2019 • 1 year 8 months",
-                "• Developed and maintained Android applications for various clients\n" +
-                        "• Implemented RESTful API integrations and local data storage\n" +
-                        "• Fixed bugs and improved app stability\n" +
-                        "• Participated in agile development process\n" +
-                        "• Collaborated with QA team to ensure app quality",
-                R.drawable.company_logo_placeholder,
-                listOf("Java", "Android", "SQLite", "MVP")
-            )
+//            Experience(
+//                "Android Developer",
+//                "AppTech Solutions",
+//                "Jun 2017 - Feb 2019 • 1 year 8 months",
+//                "• Developed and maintained Android applications for various clients\n" +
+//                        "• Implemented RESTful API integrations and local data storage\n" +
+//                        "• Fixed bugs and improved app stability\n" +
+//                        "• Participated in agile development process\n" +
+//                        "• Collaborated with QA team to ensure app quality",
+//                R.drawable.company_logo_placeholder,
+//                listOf("Java", "Android", "SQLite", "MVP")
+//            )
         )
 
         experienceRecyclerView.adapter = ExperienceAdapter(experiences)

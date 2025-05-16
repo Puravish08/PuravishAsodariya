@@ -19,6 +19,7 @@ import com.portfolio.puravishasodariya.adapters.ProjectsAdapter
 import com.portfolio.puravishasodariya.models.Certification
 import com.portfolio.puravishasodariya.models.Experience
 import com.portfolio.puravishasodariya.models.Project
+import androidx.core.net.toUri
 
 class HomeFragment : Fragment() {
     private lateinit var projectsRecyclerView: RecyclerView
@@ -82,15 +83,15 @@ class HomeFragment : Fragment() {
         val experiences = listOf(
             Experience(
                 "Senior Android Developer",
-                "Tech Solutions Inc.",
-                "Jan 2021 - Present • 2+ years",
+                "Hindava Infotech.",
+                "Jan 2021 - Present • 10+ years",
                 "• Led a team of 5 developers to build and maintain multiple Android applications\n" +
-                        "• Implemented MVVM architecture and Clean Code principles",
+                        "• Implemented Clean Code principles",
                 R.drawable.company_logo_placeholder,
                 listOf("Kotlin", "Android", "Firebase")
             ),
             Experience(
-                "Flutter Developer",
+                "Android & Flutter Developer",
                 "Mobile Innovations",
                 "Mar 2019 - Dec 2020 • 1 year 9 months",
                 "• Developed cross-platform applications using Flutter framework\n" +
@@ -109,8 +110,8 @@ class HomeFragment : Fragment() {
 
         val certifications = listOf(
             Certification(
-                "Android Associate Developer",
-                "Google",
+                "Android Developer",
+                "Red & White Multimedia",
                 "Issued Jun 2022 • No Expiration",
                 R.drawable.certification_logo_placeholder,
                 "https://www.credential.net/android-developer"
@@ -126,7 +127,7 @@ class HomeFragment : Fragment() {
 
         certificationsRecyclerView.adapter = CertificationsAdapter(certifications) { certification ->
             // Handle certificate click - open certificate link
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(certification.certificateLink))
+            val intent = Intent(Intent.ACTION_VIEW, certification.certificateLink.toUri())
             startActivity(intent)
         }
     }

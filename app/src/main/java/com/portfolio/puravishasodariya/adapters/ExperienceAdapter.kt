@@ -17,7 +17,7 @@ class ExperienceAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExperienceViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_experience, parent, false)
+            .inflate(R.layout.experience_item_layout, parent, false)
         return ExperienceViewHolder(view)
     }
 

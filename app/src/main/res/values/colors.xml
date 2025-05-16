@@ -2,4 +2,33 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <!-- Base colors -->
+    <color name="card_dark">#1E1E1E</color>
+    <color name="accent_color_variant">#388E3C</color>
+    <color name="accent_secondary">#2196F3</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="progress_track_color">#424242</color>
+
+    <!-- Gradient colors -->
+    <color name="gradient_start">#4CAF50</color>
+    <color name="gradient_end">#2196F3</color>
+
+    <!-- Custom colors -->
+    <color name="background_dark">#121212</color>
+    <color name="card_background">#1E1E1E</color>
+    <color name="accent_color">#00BCD4</color>
+    <color name="text_secondary">#B3FFFFFF</color>
+    <color name="divider_color">#33FFFFFF</color>
+    <color name="chip_background">#2D2D2D</color>
+    <color name="chip_selected">#3300BCD4</color>
+
+
+    <!-- Bottom navigation colors -->
+    <color name="bottom_nav_selected">#00BCD4</color> <!-- Same as accent_color -->
+    <color name="bottom_nav_unselected">#80FFFFFF</color> <!-- White with 50% opacity -->
+
+    <!-- Standard colors -->
+    <color name="colorPrimary">#00BCD4</color>
+    <color name="colorPrimaryDark">#0097A7</color>
+    <color name="colorAccent">#00BCD4</color>
 </resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="@color/card_background" />
+    <stroke
+        android:width="2dp"
+        android:color="@color/accent_color" />
+</shape>
+
+
+    <!--&lt;!&ndash; res/drawable/circle_background.xml &ndash;&gt;-->
+<!--<shape xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:shape="oval">-->
+<!--    <solid android:color="@android:color/white" />-->
+<!--</shape>-->

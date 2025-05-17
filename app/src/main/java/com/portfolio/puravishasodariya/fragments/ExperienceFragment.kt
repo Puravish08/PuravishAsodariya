@@ -28,41 +28,33 @@ class ExperienceFragment : Fragment() {
 
         val experiences = listOf(
             Experience(
-                "Senior Android Developer",
-                "Tech Solutions Inc.",
-                "Jan 2021 - Present • 2+ years",
-                "• Led a team of 5 developers to build and maintain multiple Android applications\n" +
-                        "• Implemented MVVM architecture and Clean Code principles\n" +
-                        "• Reduced app crash rate by 75% and improved app performance\n" +
-                        "• Mentored junior developers and conducted code reviews\n" +
-                        "• Collaborated with product and design teams to define app features",
-                R.drawable.company_logo_placeholder,
-                listOf("Kotlin", "Android", "Firebase", "MVVM")
+                "Android & Flutter Developer",
+                "Digitalk Techno LLP.",
+                "Dec 2024 - Present • 6+ Months",
+                """
+            • Developed high-performance cross-platform applications using the Flutter & Android
+            • Integrated RESTful APIs and implemented efficient state management solutions
+            • Translated complex UI/UX designs into responsive and intuitive user interfaces
+            • Conducted performance optimizations to reduce app load times and memory usage
+            • Contributed to CI/CD pipeline integration for seamless testing and automated deployment """.trimIndent(),
+                R.drawable.ic_d,
+                listOf("Android", "Kotlin", "Flutter", "API Integration", "MVVM", "Ci/CD","Postman Api Testing")
             ),
             Experience(
-                "Flutter Developer",
-                "Mobile Innovations",
-                "Mar 2019 - Dec 2020 • 1 year 9 months",
-                "• Developed cross-platform applications using Flutter framework\n" +
-                        "• Integrated RESTful APIs and implemented state management\n" +
-                        "• Collaborated with design team to implement UI/UX designs\n" +
-                        "• Optimized app performance and reduced load times\n" +
-                        "• Implemented CI/CD pipelines for automated testing and deployment",
-                R.drawable.company_logo_placeholder,
-                listOf("Flutter", "Dart", "Firebase", "BLoC")
-            ),
-//            Experience(
-//                "Android Developer",
-//                "AppTech Solutions",
-//                "Jun 2017 - Feb 2019 • 1 year 8 months",
-//                "• Developed and maintained Android applications for various clients\n" +
-//                        "• Implemented RESTful API integrations and local data storage\n" +
-//                        "• Fixed bugs and improved app stability\n" +
-//                        "• Participated in agile development process\n" +
-//                        "• Collaborated with QA team to ensure app quality",
-//                R.drawable.company_logo_placeholder,
-//                listOf("Java", "Android", "SQLite", "MVP")
-//            )
+                "Android Developer",
+                "Hindava Info-tech.",
+                "Jan 2024 - Dec 2024 • 10+ months",
+                """
+                   • Started my professional career as an Android developer at Digitalk Techno LLP
+                   • Contributed to application development using Java, focusing on clean and maintainable code
+                   • Learned and implemented RESTful API integration to fetch and display dynamic data
+                   • Collaborated with senior developers to understand and apply MVVM architecture patterns
+                   • Participated in team meetings, code reviews, and sprint planning to align with project goals
+                   • Proactively worked on improving debugging skills and understanding of Android lifecycle components
+                   """.trimIndent(),
+                R.drawable.ic_h,
+                listOf("Android", "Java", "API Integration","SQLite")
+            )
         )
 
         experienceRecyclerView.adapter = ExperienceAdapter(experiences)

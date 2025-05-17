@@ -1,14 +1,13 @@
 package com.portfolio.puravishasodariya.fragments
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import android.widget.TextView
+import androidx.core.net.toUri
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -19,7 +18,6 @@ import com.portfolio.puravishasodariya.adapters.ProjectsAdapter
 import com.portfolio.puravishasodariya.models.Certification
 import com.portfolio.puravishasodariya.models.Experience
 import com.portfolio.puravishasodariya.models.Project
-import androidx.core.net.toUri
 
 class HomeFragment : Fragment() {
     private lateinit var projectsRecyclerView: RecyclerView
@@ -43,35 +41,36 @@ class HomeFragment : Fragment() {
 
     private fun setupProjectsRecyclerView(view: View) {
         projectsRecyclerView = view.findViewById(R.id.projectsRecyclerView)
-        projectsRecyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        projectsRecyclerView.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
         val projects = listOf(
             Project(
-                "E-Commerce App",
-                "A full-featured e-commerce application with payment integration and real-time tracking.",
-                R.drawable.project_placeholder,
-                listOf("Kotlin", "MVVM", "Firebase"),
-                "https://github.com/puravish/ecommerce-app"
+                "VoiceScreenLock App",
+                "Developed a secure Android lock screen using voice recognition for user authentication.",
+                R.drawable.ic_voice,
+                listOf("Java", "VoiceRecognition"),
+                "https://github.com/Puravish08/VoiceScreenLock"
             ),
             Project(
-                "Weather Forecast",
-                "Real-time weather forecasting app with location tracking and notifications.",
-                R.drawable.project_placeholder,
-                listOf("Flutter", "Dart", "API Integration"),
-                "https://github.com/puravish/weather-app"
+                "Don't Touch My Phone",
+                "Created an anti-theft app that triggers alerts using motion sensor detection.",
+                R.drawable.ic_donttouch,
+                listOf("Java", "Sensor Integration"),
+                "https://github.com/Puravish08/DontTouchmyphone"
             ),
             Project(
-                "Task Manager",
-                "Productivity app for managing tasks with reminders and categories.",
-                R.drawable.project_placeholder,
-                listOf("Java", "Room", "MVVM"),
-                "https://github.com/puravish/task-manager"
+                "Weather App",
+                "Built a weather forecasting app with real-time update using API integration and location services.",
+                R.drawable.ic_weater,
+                listOf("Kotlin", "Api Integration"),
+                "https://github.com/Puravish08/Wetherapp"
             )
         )
 
         projectsRecyclerView.adapter = ProjectsAdapter(projects) { project ->
             // Handle project click - open GitHub link
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(project.githubLink))
+            val intent = Intent(Intent.ACTION_VIEW, project.githubLink.toUri())
             startActivity(intent)
         }
     }
@@ -82,22 +81,32 @@ class HomeFragment : Fragment() {
 
         val experiences = listOf(
             Experience(
-                "Senior Android Developer",
-                "Hindava Infotech.",
-                "Jan 2021 - Present • 10+ years",
-                "• Led a team of 5 developers to build and maintain multiple Android applications\n" +
-                        "• Implemented Clean Code principles",
-                R.drawable.company_logo_placeholder,
-                listOf("Kotlin", "Android", "Firebase")
+                "Android & Flutter Developer",
+                "Digitalk Techno LLP.",
+                "Dec 2024 - Present • 6+ Months",
+                """
+            • Developed high-performance cross-platform applications using the Flutter & Android
+            • Integrated RESTful APIs and implemented efficient state management solutions
+            • Translated complex UI/UX designs into responsive and intuitive user interfaces
+            • Conducted performance optimizations to reduce app load times and memory usage
+            • Contributed to CI/CD pipeline integration for seamless testing and automated deployment """.trimIndent(),
+                R.drawable.ic_d,
+                listOf("Android", "Kotlin", "Flutter", "API Integration", "MVVM", "Trello")
             ),
             Experience(
-                "Android & Flutter Developer",
-                "Mobile Innovations",
-                "Mar 2019 - Dec 2020 • 1 year 9 months",
-                "• Developed cross-platform applications using Flutter framework\n" +
-                        "• Integrated RESTful APIs and implemented state management",
-                R.drawable.company_logo_placeholder,
-                listOf("Flutter", "Dart", "Firebase")
+                "Android Developer",
+                "Hindava Info-tech.",
+                "Jan 2024 - Dec 2024 • 10+ months",
+                """
+                   • Started my professional career as an Android developer at Digitalk Techno LLP
+                   • Contributed to application development using Java, focusing on clean and maintainable code
+                   • Learned and implemented RESTful API integration to fetch and display dynamic data
+                   • Collaborated with senior developers to understand and apply MVVM architecture patterns
+                   • Participated in team meetings, code reviews, and sprint planning to align with project goals
+                   • Proactively worked on improving debugging skills and understanding of Android lifecycle components
+                   """.trimIndent(),
+                R.drawable.ic_h,
+                listOf("Android", "Java", "API Integration")
             )
         )
 
@@ -112,24 +121,24 @@ class HomeFragment : Fragment() {
             Certification(
                 "Android Developer",
                 "Red & White Multimedia",
-                "Issued Jun 2022 • No Expiration",
-                R.drawable.certification_logo_placeholder,
-                "https://www.credential.net/android-developer"
-            ),
-            Certification(
-                "Flutter Development Bootcamp",
-                "Udemy",
-                "Issued Mar 2021",
-                R.drawable.certification_logo_placeholder,
-                "https://www.udemy.com/certificate/flutter-bootcamp"
+                "Issued Dec 2023 • No Expiration",
+                R.drawable.redandwhite,
             )
+//            Certification(
+//                "Flutter Development Bootcamp",
+//                "Udemy",
+//                "Issued Mar 2021",
+//                R.drawable.certification_logo_placeholder,
+//                "https://www.udemy.com/certificate/flutter-bootcamp"
+//            )
         )
 
-        certificationsRecyclerView.adapter = CertificationsAdapter(certifications) { certification ->
-            // Handle certificate click - open certificate link
-            val intent = Intent(Intent.ACTION_VIEW, certification.certificateLink.toUri())
-            startActivity(intent)
-        }
+        certificationsRecyclerView.adapter =
+            CertificationsAdapter(certifications) { certification ->
+                // Handle certificate click - open certificate link
+//            val intent = Intent(Intent.ACTION_VIEW, certification.certificateLink.toUri())
+//            startActivity(intent)
+            }
     }
 
     private fun setupViewAllButtons(view: View) {

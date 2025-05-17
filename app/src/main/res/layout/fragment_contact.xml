@@ -49,6 +49,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Your Name"
+                    android:textColorHint="@color/accent_color"
                     app:boxStrokeColor="@color/accent_color"
                     app:hintTextColor="@color/accent_color">
 
@@ -56,6 +57,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textPersonName"
+                        android:background="@drawable/border_bg"
                         android:textColor="@android:color/white" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -66,6 +68,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:hint="Your Email"
+                    android:textColorHint="@color/accent_color"
                     app:boxStrokeColor="@color/accent_color"
                     app:hintTextColor="@color/accent_color">
 
@@ -73,6 +76,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textEmailAddress"
+
+
+                        android:background="@drawable/border_bg"
                         android:textColor="@android:color/white" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -83,6 +89,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:hint="Your Message"
+                    android:textColorHint="@color/accent_color"
                     app:boxStrokeColor="@color/accent_color"
                     app:hintTextColor="@color/accent_color">
 
@@ -92,6 +99,7 @@
                         android:gravity="top"
                         android:inputType="textMultiLine"
                         android:lines="5"
+                        android:background="@drawable/border_bg"
                         android:textColor="@android:color/white" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -137,7 +145,7 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@drawable/ic_email"
+                        android:src="@android:drawable/ic_dialog_email"
                         app:tint="@color/accent_color" />
 
                     <TextView
@@ -145,7 +153,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
                         android:fontFamily="@font/inter_regular"
-                        android:text="puravish.asodariya@gmail.com"
+                        android:text="puravishasodariya@gmail.com"
                         android:textColor="@android:color/white"
                         android:textSize="16sp" />
                 </LinearLayout>
@@ -159,7 +167,7 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@drawable/ic_phone"
+                        android:src="@android:drawable/stat_sys_phone_call"
                         app:tint="@color/accent_color" />
 
                     <TextView
@@ -167,7 +175,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
                         android:fontFamily="@font/inter_regular"
-                        android:text="+91 9876543210"
+                        android:text="+91 9687543423"
                         android:textColor="@android:color/white"
                         android:textSize="16sp" />
                 </LinearLayout>

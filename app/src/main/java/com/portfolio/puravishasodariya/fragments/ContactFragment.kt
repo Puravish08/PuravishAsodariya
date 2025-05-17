@@ -36,6 +36,7 @@ class ContactFragment : Fragment() {
 
         sendButton.setOnClickListener {
             if (validateInputs()) {
+                sendWhatsAppMessage(nameInput, emailInput, messageInput)
                 // In a real app, you would send the message to a backend
                 Toast.makeText(requireContext(), "Message sent successfully!", Toast.LENGTH_SHORT).show()
                 clearInputs()
@@ -44,6 +45,9 @@ class ContactFragment : Fragment() {
 
         setupSocialButtons(view)
     }
+
+
+
 
     private fun validateInputs(): Boolean {
         var isValid = true
@@ -79,6 +83,38 @@ class ContactFragment : Fragment() {
         return isValid
     }
 
+
+    private fun sendWhatsAppMessage(
+        nameInput: TextInputLayout,
+        emailInput: TextInputLayout,
+        messageInput: TextInputLayout
+    ) {
+        val name = nameInput.editText?.text.toString().trim()
+        val email = emailInput.editText?.text.toString().trim()
+        val message = messageInput.editText?.text.toString().trim()
+
+        val formattedMessage = """
+        Name: $name
+        Email: $email
+        Message: $message
+    """.trimIndent()
+
+        val phoneNumber = "9687543423" // Replace with your number, no '+' sign
+
+        try {
+            val uri = Uri.parse("https://wa.me/$phoneNumber?text=${Uri.encode(formattedMessage)}")
+            val intent = Intent(Intent.ACTION_VIEW, uri)
+            intent.setPackage("com.whatsapp")
+            startActivity(intent)
+        } catch (e: Exception) {
+            Toast.makeText(requireContext(), "WhatsApp not installed.", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+
+
+
+
     private fun clearInputs() {
         nameInput.editText?.text?.clear()
         emailInput.editText?.text?.clear()
@@ -87,7 +123,7 @@ class ContactFragment : Fragment() {
 
     private fun setupSocialButtons(view: View) {
         view.findViewById<ImageButton>(R.id.btnLinkedin).setOnClickListener {
-            openUrl("https://www.linkedin.com/in/puravish-asodariya/")
+            openUrl("https://www.linkedin.com/in/puravish-asodariya-800161283/?originalSubdomain=in")
         }
 
         view.findViewById<ImageButton>(R.id.btnGithub).setOnClickListener {
@@ -95,11 +131,11 @@ class ContactFragment : Fragment() {
         }
 
         view.findViewById<ImageButton>(R.id.btnTwitter).setOnClickListener {
-            openUrl("https://twitter.com/puravish_a")
+            openUrl("https://x.com/Puravish?t=yc4YelEMwz7IP7fp-5v66g&s=09")
         }
 
         view.findViewById<ImageButton>(R.id.btnInstagram).setOnClickListener {
-            openUrl("https://www.instagram.com/puravish_asodariya/")
+            openUrl("https://www.instagram.com/puravish08/?igsh=emp4ODcydXJtZW4%3D#")
         }
     }
 

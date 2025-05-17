@@ -22,7 +22,7 @@
             android:background="@drawable/circle_background"
             android:padding="12dp"
             android:scaleType="centerInside"
-            tools:src="@drawable/certification_logo_placeholder" />
+            tools:src="@drawable/icon_android_studio" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -65,6 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="View"
+            android:visibility="gone"
             android:textColor="@color/accent_color"
             app:strokeColor="@color/accent_color" />
     </LinearLayout>

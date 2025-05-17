@@ -8,6 +8,13 @@ data class Project(
     val githubLink: String
 )
 
+data class Project2(
+    val title: String,
+    val description: String,
+    val imageResId: Int,
+    val technologies: List<String>,
+)
+
 data class Experience(
     val jobTitle: String,
     val companyName: String,
@@ -22,5 +29,11 @@ data class Certification(
     val issuingOrganization: String,
     val issueDate: String,
     val logoResId: Int,
-    val certificateLink: String
 )
+//data class Certification(
+//    val name: String,
+//    val issuingOrganization: String,
+//    val issueDate: String,
+//    val logoResId: Int,
+//    val certificateLink: String
+//)

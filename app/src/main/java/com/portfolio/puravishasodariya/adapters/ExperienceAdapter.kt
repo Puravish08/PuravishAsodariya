@@ -51,6 +51,7 @@ class ExperienceAdapter(
                 chip.text = tech
                 chip.isCheckable = false
                 chip.setChipBackgroundColorResource(R.color.chip_background)
+                chip.setTextColor(itemView.context.getColor(android.R.color.white))
                 chip.setChipStrokeColorResource(R.color.accent_color)
                 chip.chipStrokeWidth = 1f
                 techStackChipGroup.addView(chip)

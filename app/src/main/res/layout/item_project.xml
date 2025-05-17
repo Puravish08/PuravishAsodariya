@@ -94,17 +94,6 @@
                         app:chipStrokeWidth="1dp" />
                 </com.google.android.material.chip.ChipGroup>
             </HorizontalScrollView>
-
-            <Button
-                android:id="@+id/btnViewProject"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:layout_marginTop="8dp"
-                android:text="View Project"
-                android:textSize="12sp"
-                android:textColor="@color/accent_color"
-                app:strokeColor="@color/accent_color" />
         </LinearLayout>
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

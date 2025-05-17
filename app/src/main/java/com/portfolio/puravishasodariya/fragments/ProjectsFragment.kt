@@ -62,6 +62,8 @@ class ProjectsFragment : Fragment() {
             )
         )
 
+
+
        val projects2 = listOf(
             Project2(
                 "Photo Editor",

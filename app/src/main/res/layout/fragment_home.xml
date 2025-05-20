@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/scrollView"
     android:background="@color/background_dark">
 
     <LinearLayout
@@ -171,7 +172,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/inter_regular"
-                    android:text="Passionate mobile developer with over 5 years of experience in creating innovative and user-friendly applications. Specialized in Android and Flutter development with a strong focus on clean architecture and performance optimization."
+                    android:text="Passionate mobile developer with experience in creating innovative and user-friendly applications. Specialized in Android and Flutter development with a strong focus on MVVM architecture and performance optimization."
                     android:textColor="@android:color/white"
                     android:textSize="14sp" />
             </LinearLayout>
@@ -313,13 +314,4 @@
         </LinearLayout>
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>
-
-
-
-
-
-
-
-
-
 

@@ -7,10 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.net.toUri
+import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.portfolio.puravishasodariya.MainActivity
 import com.portfolio.puravishasodariya.R
 import com.portfolio.puravishasodariya.adapters.CertificationsAdapter
 import com.portfolio.puravishasodariya.adapters.ExperienceAdapter
@@ -23,7 +25,7 @@ class HomeFragment : Fragment() {
     private lateinit var projectsRecyclerView: RecyclerView
     private lateinit var experienceRecyclerView: RecyclerView
     private lateinit var certificationsRecyclerView: RecyclerView
-
+    private var lastScrollY = 0
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
@@ -32,12 +34,49 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+/*
+
+        view.findViewById<NestedScrollView>(R.id.scrollView)?.setOnScrollChangeListener(
+            NestedScrollView.OnScrollChangeListener { _, _, scrollY, _, oldScrollY ->
+                if (scrollY > oldScrollY && scrollY > 40) {
+                    // Scrolling down - hide bottom navigation
+                    (activity as? MainActivity)?.setBottomNavigationVisibility(false)
+                } else if (scrollY < oldScrollY) {
+                    // Scrolling up - show bottom navigation
+                    (activity as? MainActivity)?.setBottomNavigationVisibility(true)
+                }
+                lastScrollY = scrollY
+            }
+        )
+*/
+
+        // In your fragment:
+//        view.findViewById<NestedScrollView>(R.id.scrollView)?.setOnScrollChangeListener(
+//            NestedScrollView.OnScrollChangeListener { _, _, scrollY, _, oldScrollY ->
+//                if (scrollY > oldScrollY && scrollY > 40) {
+//                    // Scrolling down - hide bottom navigation with animation
+//                    (activity as? MainActivity)?.animateBottomNavigationVisibility(false)
+//                } else if (scrollY < oldScrollY) {
+//                    // Scrolling up - show bottom navigation with animation
+//                    (activity as? MainActivity)?.animateBottomNavigationVisibility(true)
+//                }
+//                lastScrollY = scrollY
+//            }
+//        )
+        val scrollView = view.findViewById<NestedScrollView>(R.id.scrollView)
+        scrollView?.setOnScrollChangeListener(
+            NestedScrollView.OnScrollChangeListener { _, _, scrollY, _, _ ->
+                (activity as? MainActivity)?.handleScroll(scrollY)
+            }
+        )
 
         setupProjectsRecyclerView(view)
         setupExperienceRecyclerView(view)
         setupCertificationsRecyclerView(view)
         setupViewAllButtons(view)
     }
+
+
 
     private fun setupProjectsRecyclerView(view: View) {
         projectsRecyclerView = view.findViewById(R.id.projectsRecyclerView)
@@ -121,7 +160,7 @@ class HomeFragment : Fragment() {
             Certification(
                 "Android Developer",
                 "Red & White Multimedia",
-                "Issued Dec 2023 • No Expiration",
+                "Issued Jun 2022 • Dec 2023",
                 R.drawable.redandwhite,
             )
 //            Certification(
